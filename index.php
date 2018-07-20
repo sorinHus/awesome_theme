@@ -7,7 +7,10 @@
 		<div class="row text-center">
 
 		<?php 
-		
+
+		$currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		$args = array('posts_per_page' => 3, 'paged' => $currentPage);
+		query_posts( $args );
 		if( have_posts() ): $i = 0;
 			
 			while( have_posts() ): the_post(); ?>
@@ -34,10 +37,10 @@
 			<?php $i++; endwhile; ?>
 				
 			<div class="col-xs-6 text-left">
-				<?php next_posts_link('« Older Posts'); ?>
+				<?php previous_posts_link('« Newer Posts'); ?>
 			</div>
 			<div class="col-xs-6 text-right">
-				<?php previous_posts_link('Newer Posts »'); ?>
+				<?php next_posts_link('Older Posts »'); ?>
 			</div>
 			
 		<?php endif;
