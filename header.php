@@ -34,7 +34,7 @@ endif;
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">Awesome Theme</a>
+							<a class="navbar-brand" href="index.php">Awesome Theme</a>
 						</div>
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<?php 
@@ -49,6 +49,12 @@ endif;
 				</div><!-- /.container-fluid -->
 			</nav>
 			
+		</div>
+
+		<div class="search-form-container">
+
+			<?php  get_search_form(); ?>
+
 		</div>
 		
 	</div>
